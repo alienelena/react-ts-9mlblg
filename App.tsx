@@ -126,6 +126,15 @@ const App = () => {
     setRecords(newRecords);
   };
 
+  const deleteRecord = (index) => {
+    let newRecords = []
+    for (let i = 0; i < records.length; i++) {
+      if (i !== index){
+        newRecords.push(records[i])
+      }
+    }
+    setRecords(newRecords)
+  };
   //  const [records, setRecords] = useState([]);
   //  const {conditionname} = detail
 
@@ -405,7 +414,7 @@ const App = () => {
                   <TableCell component="th">{index+1}</TableCell>
                   <TableCell component="th">{item.productname}</TableCell>
                   <TableCell align="center">{item.conditionname}</TableCell>
-                  <IconButton aria-lable="delete">
+                  <IconButton aria-lable="delete" onClick={() => deleteRecord(index)}>
                     <DeleteIcon />
                   </IconButton>
                 </TableRow>
