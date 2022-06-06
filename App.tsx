@@ -97,21 +97,21 @@ const images = [
   },
 ];
 //
-function createData(
-  index: number,
-  productName: string,
-  condition: string,
-  quantity: number
-) {
-  return { index, productName, condition, quantity };
-}
+// function createData(
+//   index: number,
+//   productName: string,
+//   condition: string,
+//   quantity: number
+// ) {
+//   return { index, productName, condition, quantity };
+// }
 
-const rows = [
-  createData(1, 'ABC', 'ASD', 0),
-  createData(2, 'ABC', 'ASD', 0),
-  createData(3, 'ABC', 'ASD', 0),
-  createData(4, 'ABC', 'ASD', 0),
-];
+// const rows = [
+//   createData(1, 'ABC', 'ASD', 0),
+//   createData(2, 'ABC', 'ASD', 0),
+//   createData(3, 'ABC', 'ASD', 0),
+//   createData(4, 'ABC', 'ASD', 0),
+// ];
 
 const App = () => {
   const [records, setRecords] = useState([]);
@@ -135,14 +135,15 @@ const App = () => {
   // setRecords(newRecords);
   // }
 
-  const [clickedButton, setClickedButton] = useState('');
+  // const [clickedButton, setClickedButton] = useState('');
 
-  const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
+  // const buttonHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+  //   event.preventDefault();
 
-    const button: HTMLButtonElement = event.currentTarget;
-    setClickedButton(button.name);
-  };
+  //   const button: HTMLButtonElement = event.currentTarget;
+  //   setClickedButton(button.name);
+  // };
+
   //Banner
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
@@ -328,13 +329,13 @@ const App = () => {
         </Box>
       </main>
 
-      <Grid Container>
+      {/* <Grid Container>
         <Typography size="small" color="textPrimary" align="center" spacing={2}>
           {clickedButton !== ''
             ? `You have clicked "${clickedButton}"`
             : 'No button clicked yet'}
         </Typography>
-      </Grid>
+      </Grid> */}
 
       <Grid
         direction="row"
