@@ -371,7 +371,7 @@ const App = () => {
                 {conditions.map(({ conditionname, ...props }, index) => (
                   <Button
                     key={index}
-                    {...props}
+                    // {...props}
                     onClick={() => onAdd(productname, conditionname)}
                     className="button"
                     name={productname + conditionname}
