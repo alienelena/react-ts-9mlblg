@@ -39,6 +39,10 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { positions } from '@mui/system';
+import Badge from '@mui/material/Badge';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import MailIcon from '@mui/icons-material/Mail';
 
 const items = [
   {
@@ -217,6 +221,14 @@ const App = () => {
     backgroundSize: 'cover',
     backgroundPosition: 'center 40%',
   });
+
+  //MailIcon
+  const [count, setCount] = React.useState(1);
+  const [invisible, setInvisible] = React.useState(false);
+
+  const handleBadgeVisibility = () => {
+    setInvisible(!invisible);
+  };
 
   return (
     <React.Fragment>
@@ -422,6 +434,47 @@ const App = () => {
             </TableBody>
           </Table>
         </TableContainer>
+
+
+        
+        <Box
+      sx={{
+        color: 'action.active',
+        display: 'flex',
+        flexDirection: 'column',
+        '& > *': {
+          marginBottom: 2,
+        },
+        '& .MuiBadge-root': {
+          marginRight: 4,
+        },
+      }}
+    >
+      <div>
+        <Badge color="secondary" badgeContent={count}>
+          <MailIcon />
+        </Badge>
+        <ButtonGroup>
+          <Button
+            aria-label="reduce"
+            onClick={() => {
+              setCount(Math.max(count - 1, 0));
+            }}
+          >
+            <RemoveIcon fontSize="small" />
+          </Button>
+          <Button
+            aria-label="increase"
+            onClick={() => {
+              setCount(count + 1);
+            }}
+          >
+            <AddIcon fontSize="small" />
+          </Button>
+        </ButtonGroup>
+      </div>
+     
+    </Box>
       </Box>
     </React.Fragment>
   );
